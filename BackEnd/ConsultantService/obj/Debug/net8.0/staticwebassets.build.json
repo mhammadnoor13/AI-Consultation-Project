@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "5qQrM8QiCEGgzCBeuVXj37DqxmpkDkWlnhMdUuwb0jU=",
+  "Source": "ConsultantService",
+  "BasePath": "_content/ConsultantService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

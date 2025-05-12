@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "TDuO8rNhuIc+oAVg6QOrCr2/Too6+MmJO6iISgnyrTE=",
+  "Source": "CaseService.API",
+  "BasePath": "_content/CaseService.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
