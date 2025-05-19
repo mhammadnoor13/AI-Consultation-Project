@@ -1,6 +1,6 @@
 @CaseService.API_HostAddress = http://localhost:5228
 
-GET {{CaseService.API_HostAddress}}/weatherforecast/
+GET {{CaseService.API_HostAddress}}/cases/
 Accept: application/json
 
 ###

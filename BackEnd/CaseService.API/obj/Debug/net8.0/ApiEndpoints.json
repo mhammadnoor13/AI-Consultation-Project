@@ -2,7 +2,7 @@
   {
     "ContainingType": "CaseService.Api.Controllers.CasesController",
     "Method": "SubmitCase",
-    "RelativePath": "api/Cases",
+    "RelativePath": "Cases",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "CaseService.Api.Controllers.CasesController",
     "Method": "GetById",
-    "RelativePath": "api/Cases/{id}",
+    "RelativePath": "Cases/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -44,7 +44,7 @@
   {
     "ContainingType": "CaseService.Api.Controllers.CasesController",
     "Method": "FinishCase",
-    "RelativePath": "api/Cases/{id}/finish",
+    "RelativePath": "Cases/{id}/finish",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -60,7 +60,7 @@
   {
     "ContainingType": "CaseService.Api.Controllers.CasesController",
     "Method": "MoveToInReview",
-    "RelativePath": "api/Cases/{id}/inreview",
+    "RelativePath": "Cases/{id}/inreview",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -76,7 +76,7 @@
   {
     "ContainingType": "CaseService.Api.Controllers.CasesController",
     "Method": "GetBySpeciality",
-    "RelativePath": "api/Cases/speciality/{speciality}",
+    "RelativePath": "Cases/speciality/{speciality}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

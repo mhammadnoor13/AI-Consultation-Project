@@ -1,0 +1,11 @@
+﻿@Gateway_HostAddress = http://localhost:5026
+
+### 🔍 Get all consultants
+GET {{Gateway_HostAddress}}/consultants
+Accept: application/json
+
+###
+
+### 🔍 Get all cases
+GET {{Gateway_HostAddress}}/cases
+Accept: application/json

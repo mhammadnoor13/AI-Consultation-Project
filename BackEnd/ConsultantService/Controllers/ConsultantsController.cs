@@ -10,7 +10,7 @@ namespace WebApi.Controllers
 {
 
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class ConsultantsController : ControllerBase
     {
 

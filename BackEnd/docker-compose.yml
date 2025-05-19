@@ -1,0 +1,20 @@
+services:
+  gateway:
+    image: ${DOCKER_REGISTRY-}gateway
+    build:
+      context: .
+      dockerfile: Gateway/Dockerfile
+
+  caseservice:
+    image: ${DOCKER_REGISTRY-}caseservice
+    build:
+      context: .
+      dockerfile: CaseService.API/Dockerfile
+
+
+  consultantservice:
+    image: ${DOCKER_REGISTRY-}consultantservice
+    build:
+      context: .
+      dockerfile: ConsultantService/Dockerfile
+
