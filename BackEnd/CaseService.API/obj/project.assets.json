@@ -1041,9 +1041,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HIAST\\Final Year Project\\Code\\BackEnd\\CaseService.API\\CaseService.API.csproj",
-      "projectName": "CaseService.API",
-      "projectPath": "D:\\HIAST\\Final Year Project\\Code\\BackEnd\\CaseService.API\\CaseService.API.csproj",
+      "projectUniqueName": "D:\\HIAST\\Final Year Project\\Code\\BackEnd\\CaseService.API\\CaseService.csproj",
+      "projectName": "CaseService",
+      "projectPath": "D:\\HIAST\\Final Year Project\\Code\\BackEnd\\CaseService.API\\CaseService.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
       "outputPath": "D:\\HIAST\\Final Year Project\\Code\\BackEnd\\CaseService.API\\obj\\",
       "projectStyle": "PackageReference",

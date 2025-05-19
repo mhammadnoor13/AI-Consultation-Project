@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "ConsultantService.Controllers.ConsultantsController",
+    "ContainingType": "WebApi.Controllers.ConsultantsController",
     "Method": "Create",
     "RelativePath": "api/Consultants",
     "HttpMethod": "POST",
@@ -8,27 +8,27 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "req",
-        "Type": "ConsultantService.ConsultantService.Domain.Entities.CreateConsultantRequest",
+        "Name": "dto",
+        "Type": "Application.Consultants.DTOs.CreateConsultantDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Guid",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "ConsultantService.Controllers.ConsultantsController",
-    "Method": "GetSpecialty",
-    "RelativePath": "api/Consultants/{id}/specialty",
+    "ContainingType": "WebApi.Controllers.ConsultantsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Consultants",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.ConsultantsController",
+    "Method": "GetById",
+    "RelativePath": "api/Consultants/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -39,42 +39,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ConsultantService.Controllers.ConsultantsController",
-    "Method": "AssignCase",
-    "RelativePath": "api/Consultants/assign-case",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "req",
-        "Type": "ConsultantService.Controllers.ConsultantsController\u002BAssignCaseRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Guid",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": [],
+    "EndpointName": "GetConsultantById"
   }
 ]

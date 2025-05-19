@@ -1,11 +1,8 @@
-using ConsultantService.ConsultantService.Application.Interfaces;
-using ConsultantService.ConsultantService.Domain.Interfaces;
-using ConsultantService.ConsultantService.Domain.Services;
-using ConsultantService.ConsultantService.Infrastructure.Repositories;
-using MongoDB.Bson.Serialization.Serializers;
-using MongoDB.Bson.Serialization;
+using Application;
+using Infrastructure;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,17 +16,18 @@ builder.Services.AddSwaggerGen();
 
 
 
+builder.Services
+    .AddApplication()
+    .AddInfrastructure(builder.Configuration);
 
-builder.Services.AddSingleton<IMongoClient>(sp =>
-    new MongoClient(builder.Configuration.GetConnectionString("Mongo")));
-builder.Services.AddScoped(sp =>
-    sp.GetRequiredService<IMongoClient>()
-      .GetDatabase(builder.Configuration["Mongo:DatabaseName"]));
 
-builder.Services.AddScoped<IConsultantService, MongoConsultantRepository>();
-builder.Services.AddScoped<IConsultantAssignmentPolicy, MinimumLoadAssignmentPolicy>();  // stub for now
+
+builder.Host.UseSerilog((context, conifguration) =>
+    conifguration.ReadFrom.Configuration(context.Configuration));
+
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -37,6 +35,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 
