@@ -2,7 +2,7 @@
 {
     public interface ICaseEventPublisher
     {
-        Task PublishCaseCreatedAsync(Guid caseId, string email, CancellationToken ct);
+        Task PublishCaseCreatedAsync(Guid caseId, string speciality, CancellationToken ct);
         Task PublishCaseInReviewAsync(Guid caseId, CancellationToken ct);
         Task PublishCaseFinishedAsync(Guid caseId, CancellationToken ct);
     }

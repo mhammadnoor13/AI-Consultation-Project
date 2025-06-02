@@ -67,9 +67,23 @@ namespace Infrastructure.Persistence.Mongo
             }
         }
 
-        public Task<Result<IEnumerable<Consultant>>> GetBySpecialityAsync(string speciality, CancellationToken ct = default)
+        public async Task<Result<Consultant>> GetBySpecialityAsync(string speciality, CancellationToken ct = default)
         {
-            throw new NotImplementedException();
+            var consultant =  await _collection
+                    .Find(c => c.Speciality == speciality)
+                    .FirstOrDefaultAsync(ct);
+            return Result<Consultant>.Success(consultant);
+
+        }
+
+        public Task AppendCaseAsync(Guid consultantId, Guid caseId, CancellationToken ct)
+        {
+            var update = Builders<Consultant>.Update.Push(c => c.CasesAssigned, caseId);
+            return _collection.UpdateOneAsync(
+                       c => c.Id == consultantId,
+                       update,
+                       new() { IsUpsert = false },
+                       ct);
         }
     }
 }

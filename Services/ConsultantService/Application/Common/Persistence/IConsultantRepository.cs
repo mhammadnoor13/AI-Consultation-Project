@@ -14,5 +14,11 @@ public interface IConsultantRepository
     Task<Result<Unit>> AddAsync(Consultant consultant, CancellationToken ct = default);
     Task<Result<Consultant>> GetByIdAsync(Guid id , CancellationToken ct = default);
     Task<Result<IEnumerable<Consultant>>> GetAllAsync(CancellationToken ct = default);
-    Task<Result<IEnumerable<Consultant>>> GetBySpecialityAsync(string speciality, CancellationToken ct = default);
+    
+    // needed to be changed
+    Task<Result<Consultant>> GetBySpecialityAsync(string speciality, CancellationToken ct = default);
+
+    public Task AppendCaseAsync(Guid consultantId, Guid caseId, CancellationToken ct);
+
+
 }

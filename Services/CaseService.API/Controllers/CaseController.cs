@@ -16,8 +16,7 @@ namespace CaseService.Api.Controllers
             _caseService = caseService;
         }
 
-        // 1) Create a new Case
-        // POST /api/cases
+
         [HttpPost]
         public async Task<IActionResult> SubmitCase(
             [FromBody] SubmitCaseRequest req,

@@ -1,5 +1,6 @@
 ﻿using Domain.Shared;
 using Domain.ValueObjects;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,8 @@ public class Consultant
     public string LastName { get; set; }
     public Email Email { get; set; }
     public string Speciality { get; set; }
+    [BsonRepresentation(BsonType.String)]
+    public List<Guid> CasesAssigned { get; set; } = new();
 
     private Consultant() { }
 

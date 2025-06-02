@@ -1,20 +1,23 @@
 ﻿using CaseService.API.CaseService.Application.Dtos;
 using CaseService.API.CaseService.Application.Interfaces;
 using CaseService.API.CaseService.Domain.Entities;
+using Contracts;
+using MassTransit;
 
 namespace CaseService.API.CaseService.Application.Services
 {
     public class CaseService : ICaseService
     {
         private readonly ICaseRepository _repo;
-        private readonly ICaseEventPublisher _events;
+        private readonly IPublishEndpoint _publishEndpoint;
 
         public CaseService(
             ICaseRepository repo,
-            ICaseEventPublisher events)
+            IPublishEndpoint publishEndpoint)
         {
             _repo = repo;
-            _events = events;
+            _publishEndpoint = publishEndpoint;
+
         }
 
         public async Task<Guid> SubmitCaseAsync(
@@ -30,7 +33,13 @@ namespace CaseService.API.CaseService.Application.Services
             await _repo.SaveAsync(c, ct);
 
             // 3) Publish the “CaseCreated” integration event
-            await _events.PublishCaseCreatedAsync(c.Id, c.Email, ct);
+            await _publishEndpoint.Publish<ICaseSubmitted>(
+                new
+                {
+                    Id = c.Id,
+                    Speciality = c.Speciality
+                }
+                );   
 
             return c.Id;
         }
@@ -48,7 +57,7 @@ namespace CaseService.API.CaseService.Application.Services
             await _repo.SaveAsync(c, ct);
 
             // 4) Publish the “InReview” integration event
-            await _events.PublishCaseInReviewAsync(id, ct);
+            //await _events.PublishCaseInReviewAsync(id, ct);
         }
 
         public async Task FinishCaseAsync(Guid id, CancellationToken ct)
@@ -64,7 +73,7 @@ namespace CaseService.API.CaseService.Application.Services
             await _repo.SaveAsync(c, ct);
 
             // 4) Publish the “Finished” integration event
-            await _events.PublishCaseFinishedAsync(id, ct);
+            //await _events.PublishCaseFinishedAsync(id, ct);
         }
 
         public async Task<CaseDto?> GetCaseByIdAsync(Guid id, CancellationToken ct)

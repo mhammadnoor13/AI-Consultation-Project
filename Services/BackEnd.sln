@@ -9,15 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultantService", "Consul
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{A724BF80-F2AF-4F3A-9086-3DB9E1A3A2A5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "..\Gateway", "{A724BF80-F2AF-4F3A-9086-3DB9E1A3A2A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.csproj", "{6B2EA3E1-7726-42BA-8718-93C6483211D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "..\Gateway\Gateway.csproj", "{6B2EA3E1-7726-42BA-8718-93C6483211D5}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "..\AuthService\AuthService.csproj", "{1EA1B9B6-0A18-4644-B884-176977304525}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "AuthService\AuthService.csproj", "{1EA1B9B6-0A18-4644-B884-176977304525}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "..\Contracts\Contracts.csproj", "{F80764E4-6E5B-462E-AA5B-CAD8AB6E3AF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{F80764E4-6E5B-462E-AA5B-CAD8AB6E3AF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

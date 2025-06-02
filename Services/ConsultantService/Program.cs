@@ -1,4 +1,5 @@
 using Application;
+using ConsultantService.Infrastructure.Messaging.Consumers;
 using Infrastructure;
 using MassTransit;
 using MongoDB.Bson;
@@ -30,6 +31,7 @@ builder.Host.UseSerilog((context, conifguration) =>
 builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<UserRegisteredConsumer>();
+    x.AddConsumer<CaseSubmittedConsumers>();
 
     x.UsingRabbitMq((context, cfg) =>
     {
